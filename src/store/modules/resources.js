@@ -1,11 +1,21 @@
+import { timestampFormat } from '@/utils/util'
 const state = {
     gold: [],
+    gold_category: '',
     github: []
 }
 
 const mutations = {
     set_gold(state, payload) {
-        state.gold = payload
+        if (state.gold.length) {
+            state.gold.push(...payload)
+        } else {
+            state.gold = payload
+        }
+    },
+    set_gold_category(state, payload) {
+        state.gold_category = payload
+        state.gold = []
     },
     set_github(state, payload) {
         state.best = payload
@@ -15,12 +25,16 @@ const mutations = {
 const actions = {
     fetchGold({ state, commit }, payload) {
         return this.$resources.fetch_gold({
-            category: "frontend",
+            category: state.gold_category,
             order: "heat",
-            offset: 0,
+            offset: state.gold.length,
             limit: 30
         }).then(res => {
-            console.log('gold fetch list:', res)
+            if (res.code === 200) {
+                res.data.forEach(i => i.time = timestampFormat(i.date.iso))
+                commit('set_gold', res.data)
+                return res.data.length < 30
+            }
         })
     }
 }

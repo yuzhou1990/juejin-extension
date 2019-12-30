@@ -13,7 +13,7 @@ export function createAxios({ context, getStore, router }) {
     )
     http.interceptors.response.use(
         response => {
-            console.log('response:', response.data);
+            // console.log('response:', response.data);
             return response.data
         },
         err => {

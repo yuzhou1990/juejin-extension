@@ -4,9 +4,10 @@ import Vue from 'vue'
 import { createRouter } from './router'
 import { createStore } from './store'
 import { createAxios } from './utils/http'
-import { Button, Input } from 'element-ui';
+import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue'
+import './styles/index.css'
 
 Vue.mixin({
     beforeRouteUpdate(to, from, next) {
@@ -22,8 +23,7 @@ Vue.mixin({
     }
 })
 
-Vue.use(Button)
-Vue.use(Input)
+Vue.use(ElementUI)
 
 export function createApp(context) {
     let store
