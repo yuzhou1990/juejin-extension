@@ -30,7 +30,7 @@ export default context => {
                     isClient: false
                 }).catch(err => console.log(`${router.currentRoute.path}报错了,${err}`))
             )).then(() => {
-                console.log('async data server:', store.state)
+                console.log('async data server')
 
                 // 在所有预取钩子(preFetch hook) resolve 后，
                 // 我们的 store 现在已经填充入渲染应用程序所需的状态。

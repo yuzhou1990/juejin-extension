@@ -5,7 +5,7 @@
   "scripts": {
     "build:client": "vue-cli-service build --watch",
     "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode server --watch",
-    "dev": "concurrently \"npm run build:client\" \"npm run build:server\" \"nodemon ./server\" \"nodemon ./mock\"",
+    "dev": "concurrently \"npm run build:client\" \"npm run build:server\" \"nodemon ./server\"",
     "ci": "git-cz"
   },
   "dependencies": {

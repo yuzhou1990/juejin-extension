@@ -41,8 +41,6 @@ export default {
       this.loading = true
       this.$store.dispatch('resources/fetchGold').then(more => {
         this.loading = false
-        console.log(this.list.length)
-        console.log('load', this.no_more)
       })
     }
   }

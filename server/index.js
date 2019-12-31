@@ -65,7 +65,7 @@ app.get('*', async function (req, res) {
         const html = await render2String(context)
         res.send(html)
     } catch (error) {
-        console.log('req error', error);
+        console.log('req error:', error);
 
         res.status(500).send('Internal Server Error')
     }

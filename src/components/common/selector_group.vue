@@ -11,8 +11,6 @@ export default {
   },
   mounted() {
     this.$on('selector-multiple', () => {
-      console.log('on multiple')
-
       this.$children.forEach(c => (c.isActive = false))
     })
   }
