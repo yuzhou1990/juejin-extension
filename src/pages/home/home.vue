@@ -9,6 +9,9 @@ import Gold from '@/components/home_page/gold'
 export default {
   components: {
     Gold
+  },
+  asyncData({ store }) {
+    return store.dispatch('resources/fetchGold')
   }
 }
 </script>

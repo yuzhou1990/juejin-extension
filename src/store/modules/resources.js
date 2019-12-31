@@ -1,7 +1,7 @@
 import { timestampFormat } from '@/utils/util'
 const state = {
     gold: [],
-    gold_category: '',
+    gold_category: 'all',
     github: []
 }
 

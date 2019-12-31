@@ -21,10 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .spinner {
-  position: absolute;
   padding: 2rem 0;
-  left: 0;
-  bottom: 1rem;
   width: 100%;
   height: 5rem;
   text-align: center;

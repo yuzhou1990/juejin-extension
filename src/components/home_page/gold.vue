@@ -44,12 +44,8 @@ export default {
         return this.$store.state.resources.gold_category
       },
       set(value) {
-        if (this.$store.state.resources.gold_category) {
-          this.$store.commit('resources/set_gold_category', value)
-          this.$store.dispatch('resources/fetchGold')
-        } else {
-          this.$store.commit('resources/set_gold_category', value)
-        }
+        this.$store.commit('resources/set_gold_category', value)
+        this.$store.dispatch('resources/fetchGold')
       }
     }
   }

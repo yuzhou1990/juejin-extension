@@ -1,16 +1,14 @@
 <template>
-  <div class="scroll-area">
-    <ul
-      class="list"
-      :class="{'no-more':no_more}"
-      v-infinite-scroll="load"
-      infinite-scroll-disabled="disabled"
-      infinite-scroll-distance="20"
-    >
-      <GoldItem v-for="(item,index) in list" :item="item" :key="index+item.id" />
-      <ListAttention :loading="loading" :no_more="no_more" />
-    </ul>
-  </div>
+  <ul
+    class="list"
+    v-infinite-scroll="load"
+    infinite-scroll-disabled="disabled"
+    infinite-scroll-distance="50"
+    infinite-scroll-immediate="false"
+  >
+    <GoldItem v-for="(item,index) in list" :item="item" :key="index+item.id" />
+    <ListAttention :loading="loading" :no_more="no_more" />
+  </ul>
 </template>
 
 <script>
@@ -52,26 +50,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.scroll-area {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-}
-.scroll-area::-webkit-scrollbar {
-  width: 0;
-}
 .list {
   height: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-bottom: 6rem;
-  &.no-more {
-    padding-bottom: 0;
-  }
 }
 /*定义滚动条高宽及背景
  高宽分别对应横竖滚动条的尺寸*/
