@@ -56,7 +56,7 @@ app.get('*', async function (req, res) {
     }
 
     const context = {
-        title: 'vue ssr',
+        title: '掘金酱Demo',
         url: req.url,
         serverError: false,
         cookies: req.cookies
