@@ -13,7 +13,10 @@
             </h2>
           </div>
           <div class="repo-desc">
-            <div class="desc" :title="item.description">{{item.description}}</div>
+            <div
+              class="desc"
+              :title="item.description"
+            >{{item.description||'No description provided.'}}</div>
           </div>
           <div class="repo-meta">
             <span class="star">
