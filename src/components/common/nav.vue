@@ -22,11 +22,14 @@ export default {}
   background-color: #fff;
   border-radius: 2px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   -ms-flex-align: center;
   margin-bottom: 1.2rem;
 }
 .navbar-main {
   flex: 1;
+  display: flex;
+  flex-direction: row;
 }
 </style>

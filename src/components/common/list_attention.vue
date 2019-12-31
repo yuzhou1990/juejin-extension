@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div v-if="loading" class="spinner">
       <div class="react-1"></div>
       <div class="react-2"></div>
@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  width: 100%;
+}
 .spinner {
   padding: 2rem 0;
   width: 100%;

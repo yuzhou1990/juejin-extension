@@ -2,7 +2,7 @@
   <div class="selector" :class="{'active':isActive}" @click="isActive=!isActive">
     <div class="title">{{title}}</div>
     <div class="arrow">
-      <i class="el-icon-caret-bottom"></i>
+      <i :class="arrow_class"></i>
     </div>
     <ul class="list">
       <li
@@ -35,6 +35,11 @@ export default {
       isActive: false,
       selected: '',
       title: ''
+    }
+  },
+  computed: {
+    arrow_class() {
+      return this.isActive ? 'el-icon-caret-top' : 'el-icon-caret-bottom'
     }
   },
   watch: {
@@ -84,6 +89,7 @@ export default {
   color: #646c7b;
   background-color: #f8f9fb;
   cursor: pointer;
+  margin-right: 0.8rem;
   .title {
     -ms-flex-positive: 1;
     flex-grow: 1;

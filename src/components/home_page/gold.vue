@@ -2,7 +2,7 @@
   <div class="gold">
     <Nav>
       <template #left>
-        <Source></Source>
+        <Source title="掘金"></Source>
       </template>
       <template>
         <Selector :list="gold_category_list" v-model="gold_category"></Selector>
@@ -63,7 +63,5 @@ export default {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 33.97rem;
-  display: flex;
-  flex-direction: column;
 }
 </style>

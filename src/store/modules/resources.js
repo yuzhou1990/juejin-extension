@@ -2,7 +2,10 @@ import { timestampFormat } from '@/utils/util'
 const state = {
     gold: [],
     gold_category: 'all',
-    github: []
+    github: [],
+    github_category: 'trending',
+    github_period: 'day',
+    github_lang: 'javascript',
 }
 
 const mutations = {
@@ -18,8 +21,24 @@ const mutations = {
         state.gold = []
     },
     set_github(state, payload) {
-        state.best = payload
-    }
+        if (state.github.length) {
+            state.github.push(...payload)
+        } else {
+            state.github = payload
+        }
+    },
+    set_github_category(state, payload) {
+        state.github_category = payload
+        state.github = []
+    },
+    set_github_period(state, payload) {
+        state.github_period = payload
+        state.github = []
+    },
+    set_github_lang(state, payload) {
+        state.github_lang = payload
+        state.github = []
+    },
 }
 
 const actions = {
@@ -36,7 +55,21 @@ const actions = {
                 return res.data.length < 30
             }
         })
-    }
+    },
+    fetchGithub({ state, commit }, payload) {
+        return this.$resources.fetch_github({
+            category: state.github_category,
+            period: state.github_period,
+            lang: state.github_lang,
+            offset: state.github.length,
+            limit: 30
+        }).then(res => {
+            if (res.code === 200) {
+                commit('set_github', res.data)
+                return res.data.length < 30
+            }
+        })
+    },
 }
 
 export default {

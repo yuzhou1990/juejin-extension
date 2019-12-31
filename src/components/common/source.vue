@@ -1,11 +1,18 @@
 <template>
   <div class="source">
-    <div class="title">掘金</div>
+    <div v-if="title" class="title">{{title}}</div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
