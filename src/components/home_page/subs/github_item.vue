@@ -29,7 +29,7 @@
             </span>
             <span class="lang">
               <i class="el-icon-s-opportunity" :style="{'color':item.langColor}"></i>
-              {{item.lang}}
+              {{item.lang || 'Other'}}
             </span>
           </div>
         </div>

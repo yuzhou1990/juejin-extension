@@ -141,6 +141,13 @@ export default {
       color: #646c7b;
       background-color: #e9f3fd;
     }
+    .item:hover {
+      color: #fff;
+      background-color: #007fff;
+      .title {
+        opacity: 1;
+      }
+    }
   }
 }
 .selector.active .list {
