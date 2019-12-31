@@ -6,9 +6,6 @@
 
 <script>
 export default {
-  provide: {
-    multiple: true
-  },
   mounted() {
     this.$on('selector-multiple', () => {
       this.$children.forEach(c => (c.isActive = false))
