@@ -1,7 +1,7 @@
 <template>
   <li class="item-row">
     <div class="item-box">
-      <div class="item">
+      <div class="item" @click="checkUrl">
         <div class="repo-content">
           <div class="repo-header">
             <h2 class="title">
@@ -39,8 +39,8 @@
 export default {
   props: ['item'],
   methods: {
-    checkAuthor({ url }) {
-      window.open(url, '_blank')
+    checkUrl() {
+      window.open(this.item.url, '_blank')
     }
   }
 }
@@ -50,6 +50,9 @@ export default {
 a {
   color: inherit;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .item-row {
   position: relative;

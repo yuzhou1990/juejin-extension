@@ -137,6 +137,11 @@ export default {
   height: 3.5rem;
   font-size: 1.15rem;
   color: #646c7b;
+  &:hover {
+    .title {
+      opacity: 1;
+    }
+  }
   .curr {
     height: 100%;
     cursor: pointer;

@@ -12,7 +12,7 @@
             <div class="meta-item">
               <span class="text">{{item.time}}</span>
             </div>
-            <div class="meta-item" @click.stop="checkAuthor(item.user)">
+            <div class="meta-item" @click.stop="checkAuthor">
               <span class="text">{{item.user.username}}</span>
             </div>
           </div>
@@ -26,8 +26,8 @@
 export default {
   props: ['item'],
   methods: {
-    checkAuthor({ url }) {
-      window.open(url, '_blank')
+    checkAuthor() {
+      window.open(this.item.user.url, '_blank')
     }
   }
 }

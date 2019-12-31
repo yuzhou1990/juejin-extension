@@ -5,8 +5,10 @@
         <Source title="Github"></Source>
       </template>
       <template>
-        <Selector :list="github_category_list" v-model="github_category"></Selector>
-        <Selector :list="period_list" v-model="github_period"></Selector>
+        <SelectorGroup>
+          <Selector :list="github_category_list" v-model="github_category"></Selector>
+          <Selector :list="period_list" v-model="github_period"></Selector>
+        </SelectorGroup>
       </template>
       <template #right>
         <LangSelector :hots="lang_hots" :all="lang_all" v-model="github_lang"></LangSelector>
@@ -20,6 +22,7 @@
 import Nav from '@/components/common/nav'
 import Source from '@/components/common/source'
 import Selector from '@/components/common/selector'
+import SelectorGroup from '@/components/common/selector_group'
 import LangSelector from '@/components/common/lang_selector'
 import Main from './subs/github_list'
 export default {
@@ -27,6 +30,7 @@ export default {
     Nav,
     Source,
     Selector,
+    SelectorGroup,
     LangSelector,
     Main
   },

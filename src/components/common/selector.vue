@@ -1,5 +1,10 @@
 <template>
-  <div class="selector" :class="{'active':isActive}" @click="isActive=!isActive">
+  <div
+    class="selector"
+    :class="{'active':isActive}"
+    @blur="isActive=false"
+    @click="isActive=!isActive"
+  >
     <div class="title">{{title}}</div>
     <div class="arrow">
       <i :class="arrow_class"></i>
@@ -51,6 +56,12 @@ export default {
     },
     list(newValue) {
       this.defaultSelected(newValue)
+    },
+    isActive(newValue) {
+      if (newValue) {
+        this.$parent.$emit('selector-multiple')
+        this.isActive = true
+      }
     }
   },
   mounted() {
