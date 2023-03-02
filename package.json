@@ -20,7 +20,7 @@
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
     "babel-plugin-component": "^1.1.1",
-    "commitizen": "^4.0.3",
+    "commitizen": "^4.3.0",
     "concurrently": "^5.0.2",
     "cookie-parser": "^1.4.4",
     "cross-env": "^6.0.3",
