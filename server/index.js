@@ -71,6 +71,7 @@ app.get('*', async function (req, res) {
     }
 })
 
-app.listen(3030, () => {
-    console.log('渲染服务器启动成功 http://localhost:3030');
+const PORT = 23000
+app.listen(23000, () => {
+    console.log(`渲染服务器启动成功 http://localhost:${PORT}`);
 })
